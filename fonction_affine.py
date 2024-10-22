@@ -1,37 +1,24 @@
 import streamlit as st
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
-# Titre de l'application
-st.title('Visualisation interactive d\'une fonction affine')
+def app():
+    st.write("## Visualisation interactive d'une fonction affine")
+    st.write("Dans cet exercice, je peux modifier la pente et l'ordonnée à l'origine de la fonction affine, puis visualiser la courbe correspondante.")
 
-# Création des sliders pour ajuster la pente (a) et l'ordonnée à l'origine (b)
-a = st.slider('Choisir la pente (a)', min_value=-10, max_value=10, value=1)
-b = st.slider('Choisir l\'ordonnée à l\'origine (b)', min_value=-10, max_value=10, value=0)
+    # Paramètres pour la fonction affine
+    a = st.slider("Choisis la pente (a)", -10, 10, 1)
+    b = st.slider("Choisis l'ordonnée à l'origine (b)", -10, 10, 0)
+    color = st.color_picker("Choisis la couleur de la courbe", "#00f900")
 
-# Générer un ensemble de valeurs x sur l'intervalle [-10, 10]
-x = np.linspace(-10, 10, 100)
+    # Générer les données pour la fonction affine
+    x = np.linspace(-10, 10, 100)
+    y = a * x + b
 
-# Calculer les valeurs correspondantes de y = ax + b
-y = a * x + b
-
-# Créer le graphique de la fonction affine
-fig, ax = plt.subplots()
-ax.plot(x, y, label=f'y = {a}x + {b}')
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.legend()
-
-# Ajouter un choix de couleur pour la courbe
-couleur = st.color_picker('Choisir la couleur de la courbe', '#00f900')
-
-# Créer le graphique avec des options de personnalisation
-fig, ax = plt.subplots()
-ax.plot(x, y, color=couleur, label=f'y = {a}x + {b}')
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_title('Graphique de la fonction affine')
-ax.legend()
-
-# Afficher le graphique personnalisé dans Streamlit
-st.pyplot(fig)
+    fig, ax = plt.subplots()
+    ax.plot(x, y, color=color, label=f"y = {a}x + {b}")
+    ax.set_title("Graphique de la fonction affine")
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.legend()
+    st.pyplot(fig)

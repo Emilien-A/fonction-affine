@@ -5,7 +5,7 @@ import seaborn as sns
 
 def app():
     # Introduction
-    st.markdown("![Titanic](https://www.link-to-titanic-image.com)")
+    st.markdown("https://cdn.midjourney.com/6522b434-ce1d-4f04-bb01-ec7012b57947/0_0.png")
     st.markdown("# Bienvenue à mon projet Titanic! 🛳️")
     st.markdown("Dans cette application, je vais explorer les données du célèbre Titanic et visualiser plusieurs aspects importants des passagers.")
     

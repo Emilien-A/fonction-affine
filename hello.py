@@ -5,11 +5,11 @@ import seaborn as sns
 
 def app():
     # Introduction
-st.markdown("![titanic](https://cdn.midjourney.com/6522b434-ce1d-4f04-bb01-ec7012b57947/0_0.png)")    st.markdown("# Bienvenue à mon projet Titanic! 🛳️")
-st.markdown("Dans cette application, je vais explorer les données du célèbre Titanic et visualiser plusieurs aspects importants des passagers.")
+    st.markdown("![titanic](https://cdn.midjourney.com/6522b434-ce1d-4f04-bb01-ec7012b57947/0_0.png)")
+    st.markdown("# Bienvenue à mon projet Titanic! 🛳️")
+    st.markdown("Dans cette application, je vais explorer les données du célèbre Titanic et visualiser plusieurs aspects importants des passagers.")
     
     # Charger directement le fichier Titanic depuis un chemin local
-    # Assure-toi que le fichier 'train.csv' est dans le même répertoire que ton projet ou spécifie un chemin absolu
     titanic_data = pd.read_csv('train.csv')
     
     st.write("Voici un aperçu des données Titanic :")

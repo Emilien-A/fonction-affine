@@ -14,7 +14,7 @@ def app():
         st.dataframe(data.head())
 
         # Afficher les statistiques descriptives
-        st.write("Statistiques descriptives :")
+        st.write("### Statistiques descriptives")
         st.write(data.describe())
 
         # Sélectionner des colonnes à afficher
